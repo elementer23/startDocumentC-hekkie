@@ -71,7 +71,7 @@ In de tabel hieronder zal alle input (die de gebruiker moet neerzetten in volgor
 
 ## Klassen Diagram
 
-![Class Diagram](images/ClassDiagramCatering.png "Eerste versie van het klassen diagram")
+![Class Diagram](images/class_diagram_catering.png "Eerste versie van het klassen diagram")
 
 ## Testplan
 
