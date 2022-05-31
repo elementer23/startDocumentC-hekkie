@@ -67,7 +67,7 @@ In de tabel hieronder zal alle input (die de gebruiker moet neerzetten in volgor
 * Input zal worden gevalideerd.
 
 ## Lay-out van de GUI
-![Class Diagram](images/layout_GUI.png "Eerste versie van de lay-out van GUI")
+![Layout GUI](images/layout_GUI.png "Eerste versie van de lay-out van GUI")
 
 ## Klassen Diagram
 
