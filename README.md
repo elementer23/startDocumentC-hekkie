@@ -1,4 +1,8 @@
 # startDocumentC-hekkie
+
+## Robin van Dijk
+## 5018927
+
 ### Catering
 Een bedrijf verzorgt de catering van personen. Voor de periode aangegeven 
 met een begindatum en een einddatum wordt de administratie voor een aantal 
