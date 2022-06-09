@@ -33,21 +33,19 @@ In de tabel hieronder zal alle input (die de gebruiker moet neerzetten in volgor
 
 |Casus|Type|Conditie|
 |----|----|----------|
-|bedrijf nummer|`integer`|`number` > 0|
-|Klant nummer|`integer`|`number` > 0|
 |Naam van klant|`String` |niet leeg|
-|begin datum|`Date`|leeg|
-|eind datum|`Date`|leeg|
-|voorgerecht|`double`|`number` !> 1|
-|hoofdgerecht|`double`|`number` !> 1|
-|nagerecht|`double`|`number` !> 1|
+|begin datum|`Date`|not null|
+|eind datum|`Date`|null|
+|prijs van voorgerecht|`float`|`voorgerecht` == 3.00|
+|hoofdgerecht|`float`|`hoofdgerecht` == 5.00|
+|nagerecht|`float`|`nagerecht` == 2.00|
 
 #### Output
 
 |Casus|Type|
 |----|----|
-|Het totaal omgezette bedrag|`double`|
-|de gemiddelde omzet per dag|`double`|
+|Het totaal omgezette bedrag|`float`|
+|de gemiddelde omzet per dag|`float`|
 |naam van klant die voor het hoogste bedrag heeft geconsumeerd|`string`|
 |naam van klanten die wel een voorgerecht hebben gehad maar nooit een nagerecht|`string`|
 |naam van klanten die voor een hoger bedrag dan het gemiddelde per klant hebben geconsumeerd|`string`|
@@ -67,7 +65,7 @@ In de tabel hieronder zal alle input (die de gebruiker moet neerzetten in volgor
 * Input zal worden gevalideerd.
 
 ## Lay-out van de GUI
-![Layout GUI](images/layout_GUI.png "Eerste versie van de lay-out van GUI")
+![Alt text](https://raw.githubusercontent.com/elementer23/startDocumentC-hekkie/main/images/layout_GUI.png "Layout GUI")
 
 ## Klassen Diagram
 
@@ -146,4 +144,23 @@ Ophalen van de klanten die wel een voorgerecht hebben gehad maar nooit een nager
 
 |Step|Input|Action|Expected output|
 |----|-----|------|---------------|
-|1| | `klantNooitNagerechtGehad()`|`patrick`|
+|1| |`klantNooitNagerechtGehad()`|`patrick`|
+
+### User Test Cases
+
+In deze sectie worden de testcasus omschreven die een user zou kunnen invullen.
+
+#### #Input - #Output
+|Klantnaam|Gerecht|Eind datum|
+|---------|-------|----------|
+|`jan`|`voorgerecht en nagerecht`|`30-juni-2022`|
+|`bert`|`voorgerecht en hoofdgerecht`|`30-juni-2022`|
+|`jip`|`hoofdgerecht`|`30-juni-2022`|
+|`jan`|`hoofdgerecht en nagerecht`|`30-juni-2022`|
+
+|Bedrag|Totaal bedrag|Gemiddelde per dag|hoogst geconsumeerd|nooit nagerecht|klantnaam meer dan gemiddeld|
+|------|-------------|------------------|-------------------|---------------|----------------------------|
+|`5.00`|`5.00`|`5.00`|`jan`||`jan`|
+|`8.00`|`13.00`|`6.50`|`bert`|`bert`|`bert`|
+|`5.00`|`18.00`|`6.00`|`bert`|`bert, jip`|`bert`|
+|`7.00`|`25.00`|`6.25`|`bert`|`bert, jip`|`bert, jan`|
